@@ -33,7 +33,20 @@
       </div>
 
       <div class="jumbotron">
-        <p><a class="btn btn-lg btn-success" href="login.html">Login</a></p>
+        <div class="videoForm">
+          <form id="videoForm" action="https://s3.amazonaws.com/rezzi" method="post" enctype="multipart/form-data">
+            <input type="hidden" id="v-key" name="key" value="">
+            <input type="hidden" id="v-accesskey" name="AWSAccessKeyId" value="">
+            <input type="hidden" id="v-policy" name="policy" value="">
+            <input type="hidden" id="v-sig" name="signature" value="">
+            <input type="hidden" name="Content-Type" value="image/jpeg">
+            File to upload:
+            <input name="file" type="file" class="videoFile">
+            <input type="hidden" id="video-name" name="name" value="test">
+            <br>
+            <input type="submit" value="Upload File to S3">
+          </form>
+        </div>
       </div>
 
       <div class="row marketing">
@@ -81,6 +94,7 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/s3key.js"></script>
         <!-- endbuild -->
 </body>
 </html>
